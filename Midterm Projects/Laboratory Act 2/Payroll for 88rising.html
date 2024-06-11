@@ -1,0 +1,122 @@
+
+<!-- saved from url=(0119)https://dlsud.edu20.org/files/9254927/Encarnacion_LabAct2_Updated.html?lmsauth=7ae1ddd2f44b56eb953496c2aeba994b0212e1a2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Payroll for 88rising</title>
+<style type="text/css" id="operaUserStyle"></style><style type="text/css"></style><style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="./Payroll for 88rising_files/css2"></head><body>
+	<center>
+	<h1>Payroll Calculator for the 88rising Staff</h1>
+	<img src="./Payroll for 88rising_files/88rising.png" width="600" height="300">
+	<br><br>
+	<label>Enter Employee Number:
+		<input id="Emp_num">
+        <br><br>
+	</label>
+
+	<label>Enter Employee Name:
+		<input id="Emp_name">
+        <br><br>
+	</label>
+
+	<label>Enter Department:
+		<input id="dept">
+        <br><br>
+	</label>
+
+	<label>Number of days worked:
+		<input id="days">
+        <br><br>
+	</label>
+
+	<label>What is your position?</label>
+	<br>
+	<input type="radio" id="pos1" name="position" onclick="pos1()">
+	<label for="pos1"> Manager</label><br>
+
+	<input type="radio" id="pos2" name="position" onclick="pos2()">
+	<label for="pos2"> Team Leader</label><br>
+
+	<input type="radio" id="pos3" name="position" onclick="pos3()">
+	<label for="pos3"> Production Staff</label><br>
+
+	<p id="rate1" style="display: none">Your rate per day is 1500 php</p>
+	<p id="rate2" style="display: none">Your rate per day is 899 php</p>
+	<p id="rate3" style="display: none">Your rate per day is 456 php</p>
+	
+	
+	<br><br>
+	<button id="button" style="display: none" onclick="checkWage()">
+		Check your Wage
+	</button>
+	</center>
+	<script>
+			var gross = 0;
+			var sss = 0;
+			var tax = 0;
+			var deducted = pHealth + sss + tax;
+			var pHealth = 200;
+			var net = 0;
+
+		function checkWage(){
+			if (radio1.checked == true){
+				let gross = 1500 * document.getElementById("days").value;
+				let sss = gross * 0.03;
+				let tax = gross * 0.05;
+				let deducted = pHealth + sss + tax;
+				let net = gross - deducted;
+				alert("Your Gross income is: " + gross.toFixed(2) + " php"
+				+ "\nYour Deducted pay is: " + deducted.toFixed(2) + " php"
+				+ "\nYour Net pay is: " + net.toFixed(2) + " php" );
+			} else if (radio2.checked == true){
+				let gross = 899 * document.getElementById("days").value;
+				let sss = gross * 0.03;
+				let tax = gross * 0.05;
+				let deducted = pHealth + sss + tax;
+				let net = gross - deducted;
+				alert("Your Gross income is: " + gross.toFixed(2) + " php" + "\nYour Deducted pay is: " + deducted.toFixed(2)  + " php"+ "\nYour Net pay is: " + net.toFixed(2) + " php" );
+			} else{
+				let gross =  456 * document.getElementById("days").value;
+				let sss = gross * 0.03;
+				let tax = gross * 0.05;
+				let deducted = pHealth + sss + tax;
+				let net = gross - deducted;
+				alert("Your Gross income is: " + gross.toFixed(2) + " php" + "\nYour Deducted pay is: " + deducted.toFixed(2) + " php" + "\nYour Net pay is: " + net.toFixed(2) + " php");
+			}
+		}
+		var radio1 = document.getElementById("pos1");
+	    var text1 = document.getElementById("rate1");
+		var radio2 = document.getElementById("pos2");
+		var text2 = document.getElementById("rate2");
+		var radio3 = document.getElementById("pos3");
+		var text3 = document.getElementById("rate3");
+		var button = document.getElementById("button");
+
+		function pos1(){
+			if (radio1.checked == true){
+				text1.style.display = "block";
+				text2.style.display = "none";
+				text3.style.display = "none";
+				button.style.display = "block";
+			}	
+		}
+
+		function pos2(){
+			if (radio2.checked == true){
+				text2.style.display = "block";
+				text1.style.display = "none";
+				text3.style.display = "none";
+				button.style.display = "block";
+			}		
+		}
+
+		function pos3(){
+			if (radio3.checked == true){
+				text1.style.display = "none";
+				text2.style.display = "none";
+				text3.style.display = "block";
+				button.style.display = "block";
+			}
+		}
+	</script>
+
+
+</body></html>

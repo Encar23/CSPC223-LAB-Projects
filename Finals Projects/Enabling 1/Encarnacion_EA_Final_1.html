@@ -1,0 +1,102 @@
+
+<!-- saved from url=(0114)https://dlsud.edu20.org/files/9254927/Encarnacion_EA_Final_1.html?lmsauth=1e951fa8935d1799d8d8990d68af74902e483bad -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title></title>
+        <style>
+            header {
+            background-color: #828277e0;
+            color: #ffffff;
+            padding: 3px;
+            text-align: left;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: auto;
+        }
+            
+        td {
+            border: 3px solid #494949;
+            text-align: left;
+            padding: 5px;
+            background-color: #d4e8c1;
+            font-size: 30px;
+        }
+
+        th {
+            border: 3px solid #494949;
+            text-align: center;
+            padding: 5px;
+            background-color: #ed8a3f;
+            font-size: 30px;
+        }
+        body{
+            margin: 0;
+            background-size: cover;
+            background-image: url(https://external-preview.redd.it/3_w6u3dGlM5UHR2FtifTjOY_s-d_M7P0bgIWh4Nr4xQ.jpg?auto=webp&s=94fdb6df140123dfa074e0b95f400697a829b8bc);
+        }
+        </style>
+    <style type="text/css" id="operaUserStyle"></style><style type="text/css"></style><style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="./Encarnacion_EA_Final_1_files/css2"></head>
+
+    <body>
+        <header>
+            <h1>Omega Enterprises</h1>
+            <h1> Income Calculator</h1>
+        </header>
+        <center>
+
+            <br><br>
+            <table>
+                <tbody><tr>
+                    <th colspan="2">Monthly Income Calculator</th>
+                </tr>
+                <tr>
+                    <td>Input your daily rate: </td>
+                    <td><input id="dailyRate"></td>
+                </tr>
+                <tr>
+                    <td>Number of Days Worked: </td>
+                    <td><input id="daysWorked"></td>
+                </tr>
+
+            </tbody></table>
+            <br><br>
+            <button id="calculate" style="padding: 10px 17px; font-size: 15px;">Calculate</button>
+            <br><br>
+            <table>
+                <tbody><tr>
+                    <th>Monthly Income</th>
+                </tr>
+                <tr>
+                    <td id="result" style="text-align: center;"></td>
+                </tr>
+            </tbody></table>
+
+        </center>
+        <script>
+            const result = document.getElementById("result");
+
+
+            calculate.addEventListener("click", () =>{
+                const rate = Number(document.getElementById("dailyRate").value);
+                const days = Number(document.getElementById("daysWorked").value);
+                
+                const gross = (a, b) => a * b;
+                const finalGross = gross(rate, days);
+                const tax = 0.05 * finalGross;
+                const pHealth = 0.02 * finalGross;
+                const pagIbig = 200;
+
+                const deduction = (a, b, c) => a + b + c;
+                const finalDeduct = deduction(tax, pHealth, pagIbig);
+
+                const monthly = finalGross - finalDeduct;
+                result.textContent = monthly + ' php';
+            });
+
+        </script>
+    
+</body></html>

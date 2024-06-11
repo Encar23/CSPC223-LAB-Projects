@@ -1,0 +1,193 @@
+
+<!-- saved from url=(0121)https://dlsud.edu20.org/files/9254927/Encarnacion_MidtermAssessment.html?lmsauth=c47e0dd6503756ee94ecc4f440a8fa8c911005d1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title></title>
+        <style>
+            header {
+                background-color: #828277e0;
+                color: #ffffff;
+                padding: 3px;
+                text-align: left;
+                font-size: 10px;
+                display: flex;
+                justify-content: space-between;
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: auto;
+            }
+                
+            td {
+                border: 3px solid #494949;
+                text-align: center;
+                padding: 5px;
+                background-color: white;
+            }
+    
+            th {
+                border: 3px solid #494949;
+                text-align: center;
+                padding: 5px;
+                background-color: #ed8a3f;
+            }
+            body{
+                margin: 0;
+                background-size: cover;
+                background-image:url(https://rare-gallery.com/uploads/posts/4528546-vector-fractal-minimalism-abstract-red-blue-white-square-3d.png);
+            }
+            </style>
+    <style type="text/css" id="operaUserStyle"></style><style type="text/css"></style><style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="./Encarnacion_MidtermAssessment_files/css2"></head>
+    <body>
+        <center>
+            <header>
+                <h1>AMAZING TOROTOT OMEGA ROBOT</h1>
+                <h1>Online Banking</h1>
+            </header>
+            <br><br>
+            <table>
+                <tbody><tr></tr>
+                <tr><th colspan="3">ATOR ATM</th>
+                </tr><tr></tr>
+                <tr><td colspan="3"> Welcome to the Official ATM of ATOR Banking!</td>
+                </tr><tr></tr>
+                <tr><td colspan="3">What will you do today?</td>
+                </tr><tr>
+                <td id="rad_list"><input type="radio" id="rad_1" name="atm" onclick="reveal()">Withdraw</td>
+                <td id="rad_list"><input type="radio" id="rad_2" name="atm" onclick="reveal()">Deposit</td>
+                <td id="rad_list"><input type="radio" id="rad_3" name="atm" onclick="reveal()">Check Balance</td>
+                </tr>
+            </tbody></table>
+            <br><br>
+            <table id="row_1" style="display: none;">
+                <tbody><tr>
+                <th id="row_withdraw" style="display: none;">How much will you withdraw?</th>
+                <th id="row_deposit" style="display: none;">How much will you deposit?</th>
+                
+                </tr>
+                <tr>
+                    <td style="display: block; size: 20px;"><input id="amount"> </td>
+                </tr>
+                <tr>
+                <th style="display: block;"><button onclick="calc()">Confirm</button></th>
+                </tr>
+                
+                
+            </tbody></table>
+            <br><br>
+            <table id="row_2" style="display: none;">
+            <tbody><tr>
+                <th>Your balance:</th>
+            </tr>
+            <tr>
+                <td id="current_bal">2500</td>
+            </tr>
+            </tbody></table>
+            <br>
+
+            <table id="row_3" style="display: none;">
+            <tbody><tr>
+                <th>Do you wish to continue?</th>
+            </tr>
+            <tr>
+            <td><input type="radio" id="cont" name="exit" onclick="reveal()">Yes  
+                <input type="radio" id="ext" name="exit" onclick="reveal()">Exit</td>
+            </tr>
+            <tr><td id="row_4" style="display: none;"><button onclick="loop()"> Confirm</button></td>
+            </tr></tbody></table>
+            
+            
+            
+        </center>
+    
+    <script>
+        var bal = 2500;
+        var withdraw = document.getElementById("rad_1");
+        var deposit = document.getElementById("rad_2");
+        var check = document.getElementById("rad_3");
+
+        var continuee = document.getElementById("cont");
+        var exitt = document.getElementById("ext");
+
+        var amount = 0;
+        
+        var table_2 = document.getElementById("row_1");
+        var table_3 = document.getElementById("row_2");
+        var table_4 = document.getElementById("row_3");
+        var radios = document.getElementById("rad_list");
+
+        function calc(){
+                amount = Number(document.getElementById("amount").value);
+                if(withdraw.checked == true){
+                    if(amount > bal){
+                        alert("You can't withdraw more than your balance!");
+                    }
+                    else{
+                        alert("Money withdrawn!");
+                        bal = bal - amount;
+                        document.getElementById("current_bal").innerHTML = bal;
+                    }
+                    
+                }
+                else if(deposit.checked == true){
+                    alert("Money Deposited!");
+                    bal = bal + amount;
+                    document.getElementById("current_bal").innerHTML = bal;
+                }
+                else{
+                    document.getElementById("current_bal").innerHTML = bal;
+                }
+            table_4.style.display = "block";
+        }
+
+        function loop(){
+            var bye = true;
+            if(exitt.checked == true){
+
+                    table_2.style.display = "none";
+                    table_3.style.display = "none";
+                    table_4 .style.display = "none";
+
+                    alert("Thank you for doing business with us!");
+                    
+                    var bye = false;
+                }
+            else{
+                while(bye){
+                    table_4.style.display = "none";
+                }
+            }
+            
+        }
+        
+
+        function reveal(){
+            if(withdraw.checked == true){
+                    document.getElementById("row_withdraw").style.display = "block";
+                    document.getElementById("row_deposit").style.display = "none";
+                    table_2.style.display = "block";
+                    table_3.style.display = "none";
+                }
+                else if(deposit.checked == true){
+                    document.getElementById("row_deposit").style.display = "block";
+                    document.getElementById("row_withdraw").style.display = "none";
+                    table_2.style.display = "block";
+                    table_3.style.display = "none";
+                }
+                else{
+                    table_2.style.display = "none";
+                    table_3.style.display = "block";
+                    table_4.style.display = "block";
+                }
+
+            if(exitt.checked == true){
+                document.getElementById("row_4").style.display = "block";
+            }
+            else if (continuee.checked == true){
+                document.getElementById("row_4").style.display = "none";
+            }
+        }
+
+
+    </script>
+</body></html>

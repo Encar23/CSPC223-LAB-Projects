@@ -1,0 +1,256 @@
+
+<!-- saved from url=(0111)https://dlsud.edu20.org/files/9254927/Encarnacion_LabAct4.html?lmsauth=649b51d7afef96a1f84230f4f4761db3bd888ca5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>ATOR Online Ordering</title>
+    <style>
+        header {
+            background-color: #828277e0;
+            color: #ffffff;
+            padding: 5px;
+            text-align: left;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: auto;
+        }
+            
+        td {
+            border: 3px solid #494949;
+            text-align: center;
+            padding: 5px;
+        }
+
+        th {
+            border: 3px solid #494949;
+            text-align: center;
+            padding: 5px;
+            background-color: #ed8a3f;
+        }
+
+        input {
+            width: 100%;
+        }
+            
+        tr:nth-child(even) {
+            background-color: #d4e8c1;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f7b95c;
+        }
+        body{
+            margin: 0;
+            background-size: cover;
+            background-image:url(https://img.freepik.com/free-vector/stylish-hexagonal-line-pattern-background_1017-19742.jpg?w=900&t=st=1679147629~exp=1679148229~hmac=27ee00c6fddc206da8aff33d99c20bc98168d1db5a6b321b42f85cf93bb4424c);
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style><style type="text/css"></style><style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="./ATOR Online Ordering_files/css2"></head><body>
+    <header>
+        <h1>Amazing Torotot Omega Robot</h1>
+        <h1>Online Ordering Page</h1>
+    </header>
+    <center>
+        <br>
+        <table>
+            <tbody><tr>
+                <th style="font-size: 20;" colspan="2">Customer Information</th>
+            </tr>
+            <tr>
+                <td>Please Enter your Name: </td>
+                <td><input id="name"></td>
+            </tr>
+
+            <tr>
+                <td>Please Enter your Address: </td> 
+                <td><input id="address"></td>
+            </tr>
+        </tbody></table>
+        <br><br>
+        <table>
+            <tbody><tr>
+                <th style="font-size: 20;" colspan="3">Size Price</th>
+            </tr>
+            <tr>
+                <td>Small &amp; Medium = 500 php</td>
+                <td>Large &amp; Extra Large = 600 php</td>
+                <td>2XL &amp; 3XL = 750 php</td>
+            </tr>
+        </tbody></table>
+        <br><br>
+        <table>
+            <tbody><tr>
+                <th style="font-size: 20;" colspan="2">Please Make your Order:</th>
+            </tr>
+            <tr>
+                <th style="font-size: 20;" colspan="2">Shirt size:</th>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_size" id="sizes" value="500" colspan="1"> S</td>
+                <td><input type="radio" name="shirt_size" id="sizes" value="500" colspan="1"> M</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_size" id="sizes" value="600" colspan="1"> L</td>
+                <td><input type="radio" name="shirt_size" id="sizes" value="600" colspan="1"> XL</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_size" id="sizes" value="750" colspan="1"> 2XL</td>
+                <td><input type="radio" name="shirt_size" id="sizes" value="750" colspan="1"> 3XL</td>
+                
+            </tr>
+            <tr>
+                <th style="font-size: 20;" colspan="2">Shirt color:</th>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_color"> White</td>
+                <td><input type="radio" name="shirt_color"> Black</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_color"> Red</td>
+                <td><input type="radio" name="shirt_color"> Blue</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2"><input type="radio" name="shirt_color"> Green</td>
+            </tr>
+            <tr>
+                <th style="font-size: 20;" colspan="2">Quantity Purchased:</th>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_quantity" value="1">  1</td>
+                <td><input type="radio" name="shirt_quantity" value="2">  2</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="shirt_quantity" value="3">  3</td>   
+                <td><input type="radio" name="shirt_quantity" value="4">  4</td>
+            </tr>  
+            <tr> 
+                <td><input type="radio" name="shirt_quantity" value="5">  5</td>   
+                <td><input type="radio" name="shirt_quantity" value="6">  6</td>
+            </tr>
+        </tbody></table>
+        
+        <br><br>
+        <button style="font-size: large; background-color: #00ff00ce;" name="order" onclick="Order()">Order</button>
+        <br><br>
+
+        <table>
+            <tbody><tr>
+                <th style="font-size: 20;" colspan="4">Order Sheet</th>
+            </tr>
+            <tr>
+                <th>Customer Name:</th>
+                <td id="cus_name" colspan="3"></td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td id="cus_address" colspan="3"></td>
+            </tr>
+            <tr>
+                <th>Quantity|Size|Color:</th>
+                <td id="order_quantity"></td>
+                <td id="order_size"></td>
+                <td id="order_color"></td>
+            </tr>
+            <tr>
+                <th>Total Amount:</th>
+                <td id="order_amount" colspan="3"></td>
+            </tr>
+        </tbody></table>
+    </center>
+
+<script>
+    var size = 0;
+    function Order(){
+        document.getElementById("cus_name").innerHTML = document.getElementById("name").value;
+        document.getElementById("cus_address").innerHTML = document.getElementById("address").value;
+
+        if(document.getElementsByName("shirt_quantity")[0].checked == true){
+            var quant = 1;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else if (document.getElementsByName("shirt_quantity")[1].checked == true){
+            var quant = 2;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else if (document.getElementsByName("shirt_quantity")[2].checked == true){
+            var quant = 3;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else if (document.getElementsByName("shirt_quantity")[3].checked == true){
+            var quant = 4;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else if (document.getElementsByName("shirt_quantity")[4].checked == true){
+            var quant = 5;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else if (document.getElementsByName("shirt_quantity")[5].checked == true){
+            var quant = 6;
+            document.getElementById("order_quantity").innerHTML = quant;
+        }
+        else{
+            alert("Please Select Quantity");
+        }
+
+        if(document.getElementsByName("shirt_color")[0].checked == true){
+            document.getElementById("order_color").innerHTML = "White";
+        }
+        else if (document.getElementsByName("shirt_color")[1].checked == true){
+            document.getElementById("order_color").innerHTML = "Black";
+        }
+        else if (document.getElementsByName("shirt_color")[2].checked == true){
+            document.getElementById("order_color").innerHTML = "Red";
+        }
+        else if (document.getElementsByName("shirt_color")[3].checked == true){
+            document.getElementById("order_color").innerHTML = "Blue";
+        }
+        else if (document.getElementsByName("shirt_color")[4].checked == true){
+            document.getElementById("order_color").innerHTML = "Green";
+        }
+        else{
+            alert("Please Select Color");
+        }
+
+        if(document.getElementsByName("shirt_size")[0].checked == true){
+            size = 500;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "Small";
+        }
+        else if (document.getElementsByName("shirt_size")[1].checked == true){
+            size = 500;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "Medium";
+        }
+        else if (document.getElementsByName("shirt_size")[2].checked == true){
+            size = 600;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "Large";
+        }
+        else if (document.getElementsByName("shirt_size")[3].checked == true){
+            size = 600;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "Extra Large";
+        }
+        else if (document.getElementsByName("shirt_size")[4].checked == true){
+            size = 750;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "2XL";
+        }
+        else if (document.getElementsByName("shirt_size")[5].checked == true){
+            size = 750;
+            document.getElementById("order_amount").innerHTML = size * quant + " php";
+            document.getElementById("order_size").innerHTML = "3XL";
+        }
+        else{
+            alert("Please Select Size");
+        }
+
+    }
+</script>
+
+
+
+</body></html>
